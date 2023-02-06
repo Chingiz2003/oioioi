@@ -1,0 +1,8 @@
+body {
+    background: rgb(247, 245, 245) url("/static/main/img/speedometer.png") no-repeat;
+    background-size: 100%
+}
+
+center {
+    color:rgb(255, 255, 255)
+}

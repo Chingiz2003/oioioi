@@ -1,4 +1,11 @@
 {% extends 'layout.html' %}
+
+{% load static %}
+
+{% block css_add %}
+ <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock %} 
+
 {% block title %}Тест сайта{% endblock %}
 {% block content %} 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -11,7 +18,7 @@
             <a class="nav-link" href="/login">Войти</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Заргестрироваться</a>
+            <a class="nav-link" href="/registr">Заргестрироваться</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">О нас</a>
