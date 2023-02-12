@@ -1,4 +1,9 @@
 {% extends 'layout.html' %}
+{% load static %}
+
+{% block css_add %}
+ <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock %} 
 {% block title %}Регистрация{% endblock %}
 {% block content %}
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">

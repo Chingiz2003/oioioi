@@ -1,8 +1,8 @@
 body {
-    background: rgb(247, 245, 245) url("/static/main/img/speedometer.png") no-repeat;
-    background-size: 100%
-}
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(21,21,135,1) 49%, rgba(2,0,36,1) 100%);  
+  }
 
 center {
-    color:rgb(255, 255, 255)
+    color: aliceblue;
 }
