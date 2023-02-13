@@ -3,22 +3,24 @@
 {% load static %}
 
 {% block css_add %}
- <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+ <link rel="stylesheet" href="{% static 'main/css/registr.css' %}">
 {% endblock %} 
 
-{% block title %}Тест сайта{% endblock %}
+{% block title %}ATKUSHI{% endblock %}
 {% block content %} 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand" href="#">
+            <img src = "https://cdn-icons-png.flaticon.com/512/32/32592.png" height="45" weight="45">
+        </a>
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="#">Active</a>
+            <a class="nav-link" href="#">ATKUSHI</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/login">Войти</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/registr">Заргестрироваться</a>
+            <a class="nav-link" href="/registr">Регистрация</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">О нас</a>
@@ -26,5 +28,4 @@
         </ul>
     </nav>
     <center><h1>Добро пожаловать на сайт!</h1></center>
-    <center><div class="spinner-border text-primary"></div></center>
 {% endblock %}
