@@ -1,79 +1,74 @@
 {% extends 'layout.html' %}
+
 {% load static %}
 
 {% block css_add %}
- <link rel="stylesheet" href="{% static 'main/css/registr.css' %}">
+ <link rel="stylesheet" href="{% static 'main/css/sadsadsad.css' %}">
 {% endblock %} 
-{% block title %}Регистрация{% endblock %}
+
 {% block content %}
-<section class="h-100 h-custom">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-8 col-xl-6">
-          <div class="card rounded-3">
-            <img src="https://cutewallpaper.org/21/luxury-car-wallpaper/Car-Pic-Wallpaper-Bbt-Cars-Wallpaper-Download-Free-.jpg"
-              class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
-              alt="Sample photo">
-            <div class="card-body p-4 p-md-5">
-              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Пройдите регистрацию и просматривайте автомобили</h3>
-  
-              <form class="px-md-2">
-  
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1q" class="form-control" />
-                  <label class="form-label" for="form3Example1q">Имя</label>
-                </div>
-  
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-  
-                    <div class="form-outline datepicker">
-                      <input type="text" class="form-control" id="exampleDatepicker1" />
-                      <label for="exampleDatepicker1" class="form-label">Фамилия</label>
+{% load widget_tweaks %}
+<section>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Регистрация</h3>
+            <form method="POST">
+              {% csrf_token %}
+
+            <form class="px-md-2">
+
+              <div class="form-row">
+                <div class="col mb-3">
+                  <label for="login">Логин</label>
+                  <div class="input-group">    
+                    {{ form.username|attr:"class: form-control" }}
+                    {{ form.username.errors }}
+                    <div class="invalid-feedback">
+                      Неверный логин
                     </div>
-  
-                  </div>
-                  <div class="col-md-6 mb-4">
-  
-                    <select class="select">
-                      <option value="1" disabled>Пол</option>
-                      <option value="2">Мужской</option>
-                      <option value="3">Женский</option>
-                      <option value="4">Другое</option>
-                    </select>
-  
                   </div>
                 </div>
-  
-                <div class="mb-4">
-  
-                  <select class="select">
-                    <option value="1" disabled>Пользователь</option>
-                    <option value="2">Покупатель</option>
-                    <option value="3">Продавец</option>
-                  </select>
-  
-                </div>
-  
-                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
-                  <div class="col-md-6">
-  
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1w" class="form-control" />
-                      <label class="form-label" for="email">Адрес электронной почты</label>
-                    </div>
-  
+              </div>
+              <div class="form-row">
+                <div class="col mb-3">
+                  <label for="email">Почта</label>
+                  {{ form.email|attr:"class: form-control" }}
+                  {{ form.email.errors }}
+                  <div class="invalid-feedback">
+                    Неверная почта
                   </div>
                 </div>
-  
-                <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
-  
-              </form>
-  
-            </div>
+              </div>
+              <div class="form-row">
+                <div class="col mb-3">
+                  <label for="password1">Пароль</label>
+                  {{ form.password1|attr:"class: form-control" }}
+                  {{ form.password2.errors }}
+                  <div class="invalid-feedback">
+                    Пароли не совпадают
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col mb-3">
+                  <label for="password2">Повторите пароль</label>
+                  {{ form.password2|attr:"class: form-control" }}
+                <div class="invalid-feedback">
+                  Неверный пароль
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button> 
+            </form>
+
           </div>
         </div>
       </div>
     </div>
-  </section>  
+  </div>
+</section>
+
+
 {% endblock %}

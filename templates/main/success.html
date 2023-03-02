@@ -12,10 +12,6 @@ Login :: {{ block.super }}
 
 <h1>Login</h1>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type = "submit" class ="btn btn-primary btn-block">Вход</button>
-</form>
+<a href="/index">Вернуться в главное меню</a>
 
 {% endblock %}
