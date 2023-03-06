@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block css_add %}
+ <link rel="stylesheet" href="{% static 'main/css/proba.css' %}">
+{% endblock %} 
+
+{% block title %}ATKUSHI{% endblock %}
+{% block content %} 
+    <header class="primary-header">
+        <nav class="navbar container">
+        <a href="/index" class="logo">ATKUSHI</a>
+        <ul class="nav-list">
+            <li>
+            <a href="/login" class="nav-link">Войти</a>
+            </li>
+            <li>
+            <a href="/registr" class="nav-link">Регистрация</a>
+            </li>
+            <li>
+            <a href="/proba" class="nav-link">О нас</a>
+            </li>
+        </ul>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="button">Выход</a>
+        {% endif %}
+        </nav>
+        {% if request.user.is_authenticated %}
+        <center><h1>Здраствуй, {{ user.username }}!</h1></center>
+        {% else %}
+        <center><h1>Здраствуй!</h1></center>
+        {% endif %}
+        <div class="container">
+            <h1 class="neon">Everything you want is<br>on the other side of fear</h1>
+        </div>
+    </header>
+
+    <section class="hero"></section>
+    <section class="demo-content"></section>
+
+    <script>
+        const isScrolling = () => {
+        const headerEl = document.querySelector('.primary-header')
+        let windowPosition = window.scrollY > 250
+        headerEl.classList.toggle('active', windowPosition)
+        }
+        window.addEventListener('scroll', isScrolling)
+    </script>
+
+{% endblock %}

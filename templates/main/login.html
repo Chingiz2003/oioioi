@@ -1,33 +1,21 @@
-{% extends 'loginn.html' %}
-{% block title %}Вход в личный кабинет{% endblock %}
+{% extends 'layout.html' %}
+
+{% block title %}
+Login :: {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
 {% block content %}
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <a class="navbar-brand" href="#">Logo</a>
-      <ul class="navbar-nav">
-      <li class="nav-item">
-          <a class="nav-link" href="/index"><Вернуться назад</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">Заргестрироваться</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">О нас</a>
-      </li>
-      </ul>
-    </nav>
-    <div class="jumbotron text-center">
-        <h1>Добро пожаловать на сайт!</h1>
-        <p><h2>Войдите в свою учетную запись<h2></p>             
-    </div>
-    <form action="/action_page.php">
-        <div class="form-group">
-          <center><label for="email">Введите e-mail:</label></center>
-          <center><input type="email" placeholder="e-mail" id="email"></center>
-        </div>
-        <div class="form-group">
-            <center><label for="email">Введите пароль:</label></center>
-            <center><input type="email" placeholder="пароль" id="email"></center>
-          </div>
-    
-    <center><button type="button" class="btn btn-primary">Вход</button></center>   
-{% endblock %}                                                                                                                              
+
+<h1>Login</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type = "submit" class ="btn btn-primary btn-block">Вход</button>
+</form>
+
+{% endblock %}
