@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}Добавить{% endblock %}
+
+{% block content %}
+<div class="features"> 
+  <h1>Добавление публикации</h1> 
+  <form method="post">
+      {% csrf_token %}
+      {{ form.brand }}<br>
+      {{ form.mode }}<br>
+      {{ form.year }}<br>
+      {{ form.dvig }}<br>
+      {{ form.mileage }}<br>
+      {{ form.rule }}<br>
+      {{ form.full_text }}<br>
+      {{ form.date }}<br> 
+      <span>{{ error }}</span>
+    <button class="btn btn-success" type="submit">Добавить</button>
+  </form>  
+
+</div>
+{% endblock %}
+
+{% comment %} 
+
+<input type="text" placeholder="Марка" class="form-control"><br>
+<input type="text" placeholder="Модель" class="form-control"><br>
+<input type="text" placeholder="Год" class="form-control"><br>
+<input type="text" placeholder="Двигатель" class="form-control"><br>
+<input type="text" placeholder="Пробег" class="form-control"><br>
+<input type="text" placeholder="Руль" class="form-control"><br>
+<textarea class="form-control" placeholder="Инфо об авто"></textarea><br>
+<input type="date" class="form-control"></br>
+<button class="btn btn-success" type="submit">Добавить</button> {% endcomment %}

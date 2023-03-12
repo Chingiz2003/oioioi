@@ -2,6 +2,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm, UserLoginForm
 from django.contrib.auth import login, logout
+from .models import Articles
+from .forms import ArticlesForm
+
+
 
 # Create your views here.
 def index(request):
@@ -44,6 +48,32 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('login')
+
+def news_home(request):
+    news = Articles.objects.order_by('-date')
+    return render(request, 'main/news_home.html', {'news': news})
+
+def create(request):
+    error = ''
+    if request.method == "POST":
+        form = ArticlesForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+        else: 
+            error = 'Форма неверная'
+
+    form = ArticlesForm()
+
+    data = {
+        'form': form,
+        'error': error
+    }
+
+    return render(request, 'main/create.html', data)
+
+
+
 
 
 

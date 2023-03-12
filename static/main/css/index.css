@@ -1,103 +1,103 @@
-/* General styles */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-html {
+  }
+  html {
 	font-size: 62.5%;
-}
-body {
+  }
+  body {
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.8rem;
 	color: #fff;
-}
-a {
+  }
+  a {
 	text-decoration: none;
 	color: inherit;
-}
-/* End general styles */
-.primary-header {
+  }
+  /* End general styles */
+  .primary-header {
+	display: flex;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 999;
 	width: 100%;
 	transition: background-color 0.5s;
-}
-.container {
+  }
+  .container {
 	max-width: 120rem;
 	margin-inline: auto;
 	padding-inline: 1.5rem;
-}
-.navbar {
+  }
+  .navbar {
 	height: 7.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	border-bottom: 2px solid rgba(255, 255, 255, 0.05);
 	transition: height 0.25s;
-}
-.logo {
+  }
+  .logo {
 	font-size: 2.4rem;
 	font-weight: 900;
-}
-.nav-list {
+  }
+  .nav-list {
 	list-style: none;
 	display: flex;
 	gap: 2.5rem;
 	margin-left: 5rem;
 	margin-right: auto;
-}
-.nav-link {
+  }
+  .nav-link {
 	transition: color 0.25s;
-}
-.nav-link:hover {
+  }
+  .nav-link:hover {
 	color: #d3d3d3;
-}
-.button {
+  }
+  .button {
 	display: inline-block;
 	background-color: #fff;
 	color: #161616;
 	padding: 0.8rem 2rem;
 	border-radius: 2rem;
 	transition: background-color 0.25s;
-}
-.button:hover {
+  }
+  .button:hover {
 	background-color: #111010;
-}
-header.active {
+  }
+  header.active {
 	background-color: #fff;
 	box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
-}
-header.active .navbar {
+  }
+  header.active .navbar {
 	height: 6rem;
-}
-header.active .logo,
-header.active .nav-link {
+  }
+  header.active .logo,
+  header.active .nav-link {
 	color: #313131;
-}
-header.active .nav-link:hover {
+  }
+  header.active .nav-link:hover {
 	color: #808080;
-}
-header.active .button {
+  }
+  header.active .button {
 	background-color: #313131;
 	color: #fff;
-}
-header.active .button:hover {
+  }
+  header.active .button:hover {
 	background-color: #151515;
-}
-
-/* Hero Demo Content*/
-.hero {
+  }
+  
+  /* Hero Demo Content*/
+  .hero {
 	width: 100%;
 	height: 100vh;
 	background: url('purple1.jpg') center no-repeat;
 	background-size: cover;
 	position: relative;
-}
-
-.hero::after {
+  }
+  
+  .hero::after {
 	content: '';
 	width: inherit;
 	height: inherit;
@@ -105,11 +105,35 @@ header.active .button:hover {
 	top: 0;
 	left: 0;
 	background-color: rgba(0, 0, 0, 0.5);
-}
-
-.demo-content {
+  }
+  
+  .demo-content {
 	width: 100%;
 	height: 200vh;
 	background-color: #fff;
-}
-/* Hero end*/
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+	.nav-list {
+	  margin-left: 0;
+	}
+	.navbar {
+	  flex-direction: column;
+	  align-items: flex-start;
+	  height: auto;
+	}
+	.logo,
+	.nav-link {
+	  text-align: center;
+	  width: 100%;
+	}
+	.nav-list {
+	  width: 100%;
+	  display: flex;
+	  flex-direction: column;
+	  gap: 1rem;
+	  margin-top: 2rem;
+	  text-align: center;
+	}
+  }  

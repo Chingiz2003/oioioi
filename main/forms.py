@@ -3,6 +3,9 @@ from .models import *
 from django.forms import ModelForm, TextInput, Textarea, EmailField
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from django.forms import ModelForm
+from .models import Articles
+from django.forms import ModelForm, TextInput, DateTimeInput
 
 
 class UserLoginForm(AuthenticationForm):
@@ -19,3 +22,44 @@ class UserRegisterForm(UserCreationForm):
 	class Meta:
 		model = User 
 		fields = ('username', 'email', 'password1', 'password2')
+
+
+class ArticlesForm(ModelForm):
+	class Meta:
+		model = Articles
+		fields = ['brand', 'mode', 'year', 'dvig', 'mileage', 'rule', 'full_text', 'date']
+
+		widgets = {
+			"brand": TextInput(attrs={
+				'class': 'form-control',
+				'placeholder': 'Введите марку'
+			}),
+			"mode": TextInput(attrs={
+				'class': 'form-control',
+				'placeholder': 'Введите модель'
+			}),
+			"year": TextInput(attrs={
+				'class': 'form-control',
+				'placeholder': 'Год выпуска'
+			}),
+			"dvig": TextInput(attrs={
+				'class': 'form-control',
+				'placeholder': 'Тип двигателя'
+			}),
+			"mileage": TextInput(attrs={
+				'class': 'form-control',
+				'placeholder': 'Пробег'
+			}),
+			"rule": TextInput(attrs={
+				'class': 'form-control',
+				'placeholder': 'Расположение руля'
+			}),
+			"full_text": Textarea(attrs={
+				'class': 'form-control',
+				'placeholder': 'Описание'
+			}),
+			"date": DateTimeInput(attrs={
+				'class': 'form-control',
+				'placeholder': 'Дата'
+			})
+		}
