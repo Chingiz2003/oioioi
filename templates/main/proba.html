@@ -3,59 +3,27 @@
 {% load static %}
 
 {% block css_add %}
- <link rel="stylesheet" href="{% static 'main/css/proba.css' %}">
+ <link rel="stylesheet" href="{% static 'main/css/proba2.css' %}">
 {% endblock %} 
 
-{% block title %}ATKUSHI{% endblock %}
-{% block content %} 
-    <header class="primary-header">
-        <nav class="navbar container">
-        <a href="/index" class="logo">ATKUSHI</a>
-        <ul class="nav-list">
-            <li>
-            <a href="/login" class="nav-link">Войти</a>
-            </li>
-            <li>
-            <a href="/registr" class="nav-link">Регистрация</a>
-            </li>
-            <li>
-            <a href="/proba" class="nav-link">О нас</a>
-            </li>
-        </ul>
-        {% if request.user.is_authenticated %}
-        <a href="{% url 'logout' %}" class="button">Выход</a>
-        {% endif %}
-        </nav>
-        {% if request.user.is_authenticated %}
-        <center><h1>Здраствуй, {{ user.username }}!</h1></center>
-        {% else %}
-        <center><h1>Здраствуй!</h1></center>
-        {% endif %}
-        <div class="container p-3 my-3 bg-dark text-white">
-            <h1>Добро пожаловать на наш автосайт! Мы рады приветствовать вас и представить нашу команду.
+{% block title %}Добавить{% endblock %}
 
-                Мы являемся экспертами в области автомобильной промышленности и специализируемся на предоставлении качественной информации о новых и б/у автомобилях, а также услуг, связанных с автомобилем. Наш сайт является идеальным местом для всех, кто ищет надежную информацию о мире автомобилей.
-                
-                Мы уделяем большое внимание качеству информации на нашем сайте. Мы постоянно обновляем наши страницы, чтобы вы могли получать последнюю информацию о новых моделях автомобилей, технологических разработках, а также о том, что происходит в автомобильной индустрии в целом.
-                
-                Мы также предлагаем широкий выбор услуг, связанных с автомобилем, которые могут помочь вам принять взвешенное решение при выборе и покупке автомобиля. Наша команда профессионалов готова ответить на все ваши вопросы и помочь вам найти идеальный автомобиль.
-                
-                Мы стремимся быть лучшим ресурсом для всех, кто интересуется автомобилями. Наша миссия - предоставлять актуальную и полезную информацию о мире автомобилей и помогать нашим посетителям сделать правильный выбор при покупке автомобиля.
-                
-                Благодарим вас за посещение нашего сайта. Мы надеемся, что вы найдете здесь все, что вам нужно, и сможете воспользоваться нашими услугами. Если у вас есть какие-либо вопросы или пожелания, пожалуйста, свяжитесь с нами, мы всегда рады помочь.</h1>
-          </div>
-    </header>
+{% block content %}
+  <div class="container mt-3">
+    <div class="container">
+      <div class="wrapper">
+        <div class="banner-image"> </div>
+        <h1> Toyota Supra</h1>
+        <p>Lorem ipsum dolor sit amet, <br/>
+          consectetur adipiscing elit.</p>
+      </div>
+      <div class="button-wrapper"> 
+      <button class="btn outline">DETAILS</button>
+        <button class="btn fill">BUY NOW</button>
+      </div>
+        </div>
+    </div>
 
-    <section class="hero"></section>
-    <section class="demo-content"></section>
-
-    <script>
-        const isScrolling = () => {
-        const headerEl = document.querySelector('.primary-header')
-        let windowPosition = window.scrollY > 250
-        headerEl.classList.toggle('active', windowPosition)
-        }
-        window.addEventListener('scroll', isScrolling)
-    </script>
-
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script><script  src="./script.js"></script> 
+    
 {% endblock %}

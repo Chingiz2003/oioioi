@@ -1,21 +1,23 @@
-<section class="h-100 gradient-form" style="background-color: #eee;">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-xl-10">
-          <div class="card rounded-3 text-black">
-            <div class="row g-0">
-              <div class="col-lg-6">
-                <div class="card-body p-md-5 mx-md-4">
-  
-                  <div class="text-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/32/32592.png"
-                      style="width: 185px;" alt="logo">
-                    <h4 class="mt-1 mb-5 pb-1">Welcome to ATKUSHI</h4>
-                  </div>
-  
-                    <p>Please login to your account</p>
-  
-                    <div class="form-row">
+<form method="post">
+  {% csrf_token %}
+  <section class="h-100 gradient-form" style="background-color: #eee;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="card-body p-md-5 mx-md-4">
+    
+                    <div class="text-center">
+                      <img src="https://cdn-icons-png.flaticon.com/512/32/32592.png"
+                        style="width: 185px;" alt="logo">
+                      <h4 class="mt-1 mb-5 pb-1">Welcome to ATKUSHI</h4>
+                    </div>
+    
+                      <p>Please login to your account</p>
+    
+                      <div class="form-row">
                         <div class="col mb-3">
                           <label for="login">Логин</label>
                           <div class="input-group">    
@@ -27,16 +29,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="form-row">
-                        <div class="col mb-3">
-                          <label for="email">Почта</label>
-                          {{ form.email|attr:"class: form-control" }}
-                          {{ form.email.errors }}
-                          <div class="invalid-feedback">
-                            Неверная почта
-                          </div>
-                        </div>
-                      </div>
+    
                       <div class="form-row">
                         <div class="col mb-3">
                           <label for="password1">Пароль</label>
@@ -47,6 +40,7 @@
                           </div>
                         </div>
                       </div>
+
                       <div class="form-row">
                         <div class="col mb-3">
                           <label for="password2">Повторите пароль</label>
@@ -55,21 +49,42 @@
                           Неверный пароль
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button> 
-  
-  
+
+                      <div class="form-row">
+                        <div class="col mb-3">
+                          <label for="email">Почта</label>
+                          {{ form.email|attr:"class: form-control" }}
+                          {{ form.email.errors }}
+                          <div class="invalid-feedback">
+                            Неверная почта
+                          </div>
+                        </div>
+                      </div>
+    
+                      <div class="text-center pt-1 mb-5 pb-1">
+                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log
+                          in</button>
+                        <a class="text-muted" href="/reset_password">Забыли пароль?</a>
+                      </div>
+    
+                      <div class="d-flex align-items-center justify-content-center pb-4">
+                        <p class="mb-0 me-2">У вас нет аккаунта?</p>
+                        <a class="btn btn-outline-dark" href="/registr">Создать аккаунт</a>
+                      </div>
+    
+    
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                  <h4 class="mb-4">Теперь кочуем на авто</h4>
-                  <p class="small mb-0">Наш сайт - мечта автомобилиста! У нас вы найдете любой авто, который подойдет вам по всем параметрам, а также на нашем сайте можете размещать свои объявления! У нас работают только команда проффесионалов, которые стараются сделать вашу жизнь более авто и более мобильней :)</p>
+                <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                  <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                    <h4 class="mb-4">Теперь кочуем на авто</h4>
+                    <p class="small mb-0">Наш сайт - мечта автомобилиста! У нас вы найдете любой авто, который подойдет вам по всем параметрам, а также на нашем сайте можете размещать свои объявления! У нас работают только команда проффесионалов, которые стараются сделать вашу жизнь более авто и более мобильней :)</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 </form>

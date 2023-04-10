@@ -1,15 +1,17 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from django.contrib import messages
-from .forms import UserRegisterForm, UserLoginForm
+from .forms import UserRegisterForm, UserLoginForm, AdsCreateForm
 from django.contrib.auth import login, logout
-from .models import Articles
-from .forms import ArticlesForm
+from .models import Ads
+# from .forms import AdsForm
 
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'main/index.html')
+     return render(request, 'main/index.html')
+
 
 def registr(request):
     form = UserRegisterForm() 
@@ -30,7 +32,17 @@ def success(request):
     return render(request, 'main/success.html')
 
 def proba(request):
-    return render(request, 'main/proba.html')
+    ads = Ads.objects.all()
+    return render(request, 'main/proba.html', {'ads': ads})
+
+def katalog(request):
+    ads = Ads.objects.all()
+    return render(request, 'main/katalog.html', {'ads': ads})
+
+def get_car_by_id(request, id):
+    detailed = Ads.objects.get(id=id)
+    return render(request, 'main/get_car_by_id.html', context={'ads': detailed})
+
 
 
 def user_login(request):
@@ -49,28 +61,51 @@ def user_logout(request):
     logout(request)
     return redirect('login')
 
-def news_home(request):
-    news = Articles.objects.order_by('-date')
-    return render(request, 'main/news_home.html', {'news': news})
+# def create(request):
+#     # ads = Ads.objects.all()
+#     # res = '<h1>Каталог авто</h1>'
+#     # for item in ads:
+#     #     res += f'<div>\n<p>{item.brand}</p>\n<p>{item.mode}</p>\n</div>\n<hr>\n'
+#     # return HttpResponse(res)
+#     return render(request, 'main/create.html')
 
 def create(request):
-    error = ''
-    if request.method == "POST":
-        form = ArticlesForm(request.POST)
+    form = AdsCreateForm()
+    if request.method == 'POST':
+        form = AdsCreateForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('index')
-        else: 
-            error = 'Форма неверная'
+            messages.success(request, 'Вы успешно добавили публикацию!')
+            return redirect('success')
+        else:
+            messages.error(request, 'Заполните все поля')
+    else:
+        form = AdsCreateForm()
+    return render(request, 'main/create.html', context={'form': form})
 
-    form = ArticlesForm()
+ 
 
-    data = {
-        'form': form,
-        'error': error
-    }
+       
 
-    return render(request, 'main/create.html', data)
+
+
+#     error = ''
+#     if request.method == "POST":
+#         form = AdsForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('index')
+#         else: 
+#             error = 'Форма неверная'
+
+#     form = AdsForm()
+
+#     data = {
+#         'form': form,
+#         'error': error
+#     }
+
+#     return render(request, 'main/create.html', data)
 
 
 

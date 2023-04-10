@@ -1,0 +1,284 @@
+.primary-header {
+  background-color: #000000;
+  height: 80px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar img {
+  background: url(atkushikogo1.png);
+  margin-right: 20px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #951fcc;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.button {
+  background-color: #f16b6f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  margin-left: 20px;
+}
+
+.button:hover {
+  background-color: #d4575d;
+}
+
+.btn-info {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Hero Demo Content*/
+.hero {
+width: 100%;
+height: 100vh;
+background: url('img/carcar.jpg') center no-repeat;
+background-size: cover;
+position: relative;
+}
+
+.hero::after {
+content: '';
+width: inherit;
+height: inherit;
+position: absolute;
+top: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+.demo-content {
+width: 100%;
+height: 200vh;
+background-color: #fff;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+.nav-list {
+  margin-left: 0;
+}
+.navbar {
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto;
+}
+.logo,
+.nav-link {
+  text-align: center;
+  width: 100%;
+}
+.nav-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+}  
+/* Set the height of the carousel */
+#video-carousel-example2 {
+height: 400px;
+}
+
+/* Set the height and width of the video inside the carousel */
+.carousel-item video {
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+
+/* Set the background color of the caption */
+.carousel-caption {
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Set the color and size of the caption text */
+.carousel-caption h3,
+.carousel-caption p {
+color: #fff;
+font-size: 24px;
+}
+
+/* Set the position and style of the carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+width: 5%;
+background-color: rgba(0, 0, 0, 0.5);
+opacity: 1;
+}
+
+
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Set the color and style of the carousel indicators */
+.carousel-indicators li {
+background-color: rgba(93, 69, 69, 0.5);
+border: 1px solid #fff;
+}
+
+.carousel-indicators .active {
+background-color: #fff;
+}
+
+.card-1 {
+  max-width: 2000px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  margin: 10px;
+}
+
+.card-title {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 30px;
+  text-align: right;
+}
+
+.card-2{
+  margin-bottom: 20px;
+  position: relative;
+  width: 600px;
+  height: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  background: #000000;
+}
+.card-2 .circle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.card-2 .circle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ca02fc;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+.card-2:hover .circle::before{
+  background: #af03f3;
+  clip-path: circle(400px at center);
+}
+.card-2 img{
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 250px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.card-2:hover img{
+  left: 100%;
+  height: 400px;
+}
+.card-2 .content{
+  position: relative;
+  width: 50%;
+  left: 20%;
+  padding: 20px 20px 20px 40px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.card-2:hover .content{
+  left: -100;
+  opacity: 1;
+  visibility: visible;
+}
+.card-2 .content h2{
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+.card-2 .content h3{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.card-2 .content p{
+  color: #fff;
+}
+.card-2 .content a{
+  position: relative;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #fff;
+  color: #111;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.5s;
+}
+
+
+
+
+
+

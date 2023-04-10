@@ -3,49 +3,245 @@
 {% load static %}
 
 {% block css_add %}
- <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+ <link rel="stylesheet" href="{% static 'main/css/indexa.css' %}">
 {% endblock %} 
 
-{% block title %}Тест сайта{% endblock %}
+{% block title %}ATKUSHI{% endblock %}
 {% block content %} 
-      <header class="primary-header">
-        <nav class="navbar container">
-        <img src = "https://cdn-icons-png.flaticon.com/512/32/32592.png" height="45" weight="45">
-        <a href="/index" class="logo">ATKUSHI</a>
-        <ul class="nav-list">
-          <li>
-            <a href="/login" class="nav-link">LOGIN</a>
-          </li>
-          <li>
-            <a href="/registr" class="nav-link">SIGN UP</a>
-          </li>
-          <li>
-            <a href="/proba" class="nav-link">ABOUT US</a>
-          </li>
-        </ul>
-        {% if request.user.is_authenticated %}
-        <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Добавить объявление</li></a>
-        <a href="{% url 'logout' %}" class="button">Выход</a>
-        {% endif %}
-        </nav>
-        {% if request.user.is_authenticated %}
-        <center><h1>Welcome to the website, {{ user.username }}!</h1></center>
-        {% else %}
-        <center><h1>Welcome to the website!</h1></center>
-        {% endif %}
-      </header>
-    
+    <!--Carousel Wrapper-->
+<div id="video-carousel-example2" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#video-carousel-example2" data-slide-to="0" class="active"></li>
+    <li data-target="#video-carousel-example2" data-slide-to="1"></li>
+    <li data-target="#video-carousel-example2" data-slide-to="2"></li>
+  </ol>
+  <!--/.Indicators-->
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+    <!-- First slide -->
+    <div class="carousel-item active">
+      <!--Mask color-->
+      <div class="view">
+        <!--Video source-->
+        <video class="video-fluid" autoplay loop muted>
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-red-sports-car-74-large.mp4" type="video/mp4" />
+        </video>
+        <div class="mask rgba-indigo-light"></div>
+      </div>
 
-      <section class="hero"></section>
-      <section class="demo-content"></section>
+      <!--Caption-->
+      <div class="carousel-caption">
+        <div class="animated fadeInDown">
+          <h3 class="h3-responsive">Почему мы лучшие?</h3>
+          <p>Потому что...</p>
+        </div>
+      </div>
+      <!--Caption-->
+    </div>
+    <!-- /.First slide -->
 
-      <script>
-        const isScrolling = () => {
-          const headerEl = document.querySelector('.primary-header')
-          let windowPosition = window.scrollY > 250
-          headerEl.classList.toggle('active', windowPosition)
-        }
-        window.addEventListener('scroll', isScrolling)
-      </script>
-      
+    <!-- Second slide -->
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <!--Video source-->
+        <video class="video-fluid" autoplay loop muted>
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-dashboard-of-a-car-72-large.mp4" type="video/mp4" />
+        </video>
+        <div class="mask rgba-purple-slight"></div>
+      </div>
+
+      <!--Caption-->
+      <div class="carousel-caption">
+        <div class="animated fadeInDown">
+          <h3 class="h3-responsive">Что за тяги?</h3>
+          <p>Бархатные брат</p>
+        </div>
+      </div>
+      <!--Caption-->
+    </div>
+    <!-- /.Second slide -->
+
+    <!-- Third slide -->
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <!--Video source-->
+        <video class="video-fluid" autoplay loop muted>
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-female-models-in-a-convertible-car-43192-large.mp4" type="video/mp4" />
+        </video>
+        <div class="mask rgba-black-strong"></div>
+      </div>
+
+      <!--Caption-->
+      <div class="carousel-caption">
+        <div class="animated fadeInDown">
+          <h3 class="h3-responsive">Зачем я это вставил</h3>
+          <p>Не знаю</p>
+        </div>
+      </div>
+      <!--Caption-->
+    </div>
+    <!-- /.Third slide -->
+  </div>
+  <!--/.Slides-->
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#video-carousel-example2" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#video-carousel-example2" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+</div>
+<!--Carousel Wrapper-->
+
+<div class="card card-1">
+  <div class="card-body">
+    <h2 class="card-title">This is a title</h2>
+    <p class="card-text">This is body text inside my Bootstrap card.</p>
+    <div class="card card-2">
+      <div class="circle"></div>
+      <div class="content">
+          <h2>Легковые</h2>
+          <h3>автомобили</h3>
+          <p>Откройте для себя лучшие предложения на рынке легковых автомобилей и выберите свой идеальный автомобиль уже сегодня!</p>
+          <a href="/katalog">Посмотреть</a>
+      </div>
+      <img src="https://www.mercedes-benz.com.au/passengercars/mercedes-benz-cars/models/c-class/coupe-c205/_jcr_content/image.MQ6.2.2x.20200918031742.png" alt="">
+  </div> 
+  
+  </div>
+</div>
+
+<div class="card card-1">
+  <div class="card-body">
+    <h2 class="card-title">This is a title</h2>
+    <p class="card-text">This is body text inside my Bootstrap card.</p>
+    <div class="card card-2">
+      <div class="circle"></div>
+      <div class="content">
+          <h2>Внедорожные</h2>
+          <h3>автомобили</h3>
+          <p>Найдите свой идеальный внедорожник из нашего широкого выбора моделей.</p>
+          <a href="">Посмотреть</a>
+      </div>
+      <img src="https://www.pngmart.com/files/22/Toyota-Land-Cruiser-Prado-PNG-File.png" alt="">
+  </div>
+  </div>
+</div>
+
+<div class="card card-1">
+  <div class="card-body">
+    <h2 class="card-title">This is a title</h2>
+    <p class="card-text">This is body text inside my Bootstrap card.</p>
+    <div class="card card-2">
+      <div class="circle"></div>
+      <div class="content">
+          <h2>Грузовые</h2>
+          <h3>автомобили</h3>
+          <p>Найдите свой идеальный грузовик из нашего широкого выбора моделей.</p>
+          <a href="">Посмотреть</a>
+      </div>
+      <img src="https://www.pngplay.com/wp-content/uploads/2/Truck-PNG-Free-File-Download.png" alt="">
+  </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <!-- Facebook -->
+    <a class="btn btn-primary" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+    <!-- Twitter -->
+    <a class="btn btn-primary" style="background-color: #55acee;" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+    <!-- Google -->
+    <a class="btn btn-primary" style="background-color: #dd4b39;" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+    <!-- Instagram -->
+    <a class="btn btn-primary" style="background-color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <img src = "https://cdn-icons-png.flaticon.com/512/32/32592.png" height="45" weight="45">
+            <i class="fas fa-gem me-3"></i>Company name
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i>Казахстан, Караганда</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            atkushi09@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 702 1261 786</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 {% endblock %}

@@ -1,35 +1,106 @@
 {% extends 'layout.html' %}
 
+{% load static %}
+
+{% block css_add %}
+  <link rel="stylesheet" href="{% static 'main/css/create.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'main/css/indexa.css' %}"> -->
+{% endblock %} 
+
 {% block title %}Добавить{% endblock %}
 
 {% block content %}
-<div class="features"> 
-  <h1>Добавление публикации</h1> 
-  <form method="post">
-      {% csrf_token %}
-      {{ form.brand }}<br>
-      {{ form.mode }}<br>
-      {{ form.year }}<br>
-      {{ form.dvig }}<br>
-      {{ form.mileage }}<br>
-      {{ form.rule }}<br>
-      {{ form.full_text }}<br>
-      {{ form.date }}<br> 
-      <span>{{ error }}</span>
-    <button class="btn btn-success" type="submit">Добавить</button>
-  </form>  
+{% load widget_tweaks %}
+<section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
 
-</div>
+                <div class="text-center">
+                  <img src="https://cdn-icons-png.flaticon.com/512/32/32592.png"
+                    style="width: 185px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">Welcome to ATKUSHI</h4>
+                </div>
+
+                  <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+      
+                  <form class="px-md-2">
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example11">Категория</label>
+                    {{ form.category|attr:"class: form-control" }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example44">Марки</label>
+                    {{ form.marks|attr:"class: form-control" }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example44">Модель</label>
+                    {{ form.mark_model|attr:"class: form-control" }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example22">Год</label>
+                    {{ form.year|attr:"class: form-control" }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example44">Двигатель</label>
+                    {{ form.engine|attr:"class: form-control" }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example44">Пробег</label>
+                    {{ form.mileage|attr:"class: form-control" }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example44">Руль</label>
+                    {{ form.rudder|attr:"class: form-control" }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example44">Инфо</label>
+                    {{ form.full_text|attr:"class: form-control" }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example44">Фото</label>
+                    {{ form.photo|attr:"class: form-control" }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example44">Цена</label>
+                    {{ form.price|attr:"class: form-control" }}
+                  </div>
+
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Создать</button>
+                  </div>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">Теперь кочуем на авто</h4>
+                <p class="small mb-0">Наш сайт - мечта автомобилиста! У нас вы найдете любой авто, который подойдет вам по всем параметрам, а также на нашем сайте можете размещать свои объявления! У нас работают только команда проффесионалов, которые стараются сделать вашу жизнь более авто и более мобильней :)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+
+<script src = "{% static 'main/js/model.js' %}" ></script>
+
 {% endblock %}
-
-{% comment %} 
-
-<input type="text" placeholder="Марка" class="form-control"><br>
-<input type="text" placeholder="Модель" class="form-control"><br>
-<input type="text" placeholder="Год" class="form-control"><br>
-<input type="text" placeholder="Двигатель" class="form-control"><br>
-<input type="text" placeholder="Пробег" class="form-control"><br>
-<input type="text" placeholder="Руль" class="form-control"><br>
-<textarea class="form-control" placeholder="Инфо об авто"></textarea><br>
-<input type="date" class="form-control"></br>
-<button class="btn btn-success" type="submit">Добавить</button> {% endcomment %}
